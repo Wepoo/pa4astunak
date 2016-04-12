@@ -1,0 +1,38 @@
+%h1 Сотрудники
+
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th Фамилия
+      %th Имя      
+      %th Отчество
+      %th Дата рождения
+      %th Город
+
+  %tbody
+    - @users.each do |user|
+      %tr       
+        %td
+          = user.last_name
+        %td
+          = user.name
+        %td
+          = user.third_name
+        %td
+          = user.birthday
+        %td
+          = user.city
+        %td
+          = link_to  edit_user_path(user) do
+            %button.btn.btn-sm.btn-primary{style: 'float: right;'}
+              Редактировать
+        %td
+          = link_to user, :method => :delete, :data => { :confirm => 'Are you sure?' } do
+            %button.btn.btn-sm.btn-danger{style: 'float: right;'}
+              Удалить
+
+%br
+
+= link_to new_user_path do
+  %button.btn.btn-primary
+    Добавить сотрудника
