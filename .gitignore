@@ -1,0 +1,15 @@
+/.bundle
+/log/*
+!/log/.keep
+/tmp
+/public
+/config/database.yml
+/.idea
+/vendor/bundle
+/config/application.yml
+.env
+/node_modules
+.byebug_history
+
+# Ignore application configuration
+/config/application.yml
