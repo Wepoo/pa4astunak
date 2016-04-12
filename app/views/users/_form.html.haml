@@ -1,25 +1,33 @@
-= form_for @user do |f|
-  - if @user.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
-      %ul
-        - @user.errors.full_messages.each do |msg|
-          %li= msg
+= form_for @user, :html => {:class => 'form-horizontal'} do |f|
+  %fieldset
+    %legend
+      Заполните информацию
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :last_name
-    = f.text_field :last_name
-  .field
-    = f.label :third_name
-    = f.text_field :third_name
-  .field
-    = f.label :birthday
-    = f.datetime_select :birthday
-  .field
-    = f.label :city
-    = f.text_field :city
+    .form-group
+      %label{for: 'inputEmail', class: 'col-md-2 control-label'}
+        Фамилия
+      .col-md-10
+        = f.text_field :last_name, autofocus: true, class: 'form-control', placeholder: 'Фамилия', id: 'inputName'
+    .form-group
+      %label{for: 'inputEmail', class: 'col-md-2 control-label'}
+        Имя
+      .col-md-10
+        = f.text_field :name, class: 'form-control', placeholder: 'Имя', id: 'inputName'
+    .form-group
+      %label{for: 'inputEmail', class: 'col-md-2 control-label'}
+        Отчество
+      .col-md-10
+        = f.text_field :third_name, class: 'form-control', placeholder: 'Отчество', id: 'inputName'
+    .form-group
+      %label{for: 'inputEmail', class: 'col-md-2 control-label'}
+        Имя
+      .col-md-10
+        = f.datetime_select :birthday, class: 'form-control', id: 'inputBirthday'
+    .form-group
+      %label{for: 'inputEmail', class: 'col-md-2 control-label'}
+        Город
+      .col-md-10
+        = f.text_field :city, class: 'form-control', placeholder: 'Город', id: 'inputCity'
+
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: 'btn btn-primary'
