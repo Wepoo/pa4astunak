@@ -1,0 +1,33 @@
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %title
+      Pa4astunak
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %link{href: 'https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900', rel: 'stylesheet', type: 'text/css'}
+    = csrf_meta_tags
+  %body
+    %script{type: 'text/javascript',}
+    .navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          %button.navbar-toggle{type: "button", 'data-toggle'=>'collapse','data-target'=>'.navbar-inverse-collapse'}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to 'Pa4astunak', root_path, class: 'navbar-brand'
+          
+        .navbar-collapse.collapse.navbar-responsive-collapse
+          %ul.nav.navbar-nav
+            = render partial: 'layouts/menu'
+          %ul.nav.navbar-nav.navbar-right.top-nav
+            %li.divider
+              %li
+                = link_to root_path do
+                  %span.glyphicon.glyphicon-sunglasses
+                  Режим Бога
+    .container
+      .row
+        .col-lg-12
+          = yield  

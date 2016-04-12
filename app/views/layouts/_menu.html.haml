@@ -1,0 +1,18 @@
+%li.dropdown
+  %a.dropdown-toggle{href: "bootstrap-elements.html", 'data-target'=>"#", 'data-toggle'=>"dropdown"}
+    Menu
+    %b.caret
+  %ul.dropdown-menu
+    %li
+      = link_to "Работники", root_path
+    %li
+      = link_to "Новый работник", root_path
+    %li.divider
+    %li.dropdown-header
+      Dropdown header
+    %li
+      %a{href: "javascript:void(0)"}
+        Составить план
+    %li
+      %a{href: "javascript:void(0)"}
+        Еще планов
