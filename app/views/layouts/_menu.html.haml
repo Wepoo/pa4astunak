@@ -1,12 +1,12 @@
 %li.dropdown
   %a.dropdown-toggle{href: "bootstrap-elements.html", 'data-target'=>"#", 'data-toggle'=>"dropdown"}
-    Menu
+    Персонал
     %b.caret
   %ul.dropdown-menu
     %li
-      = link_to "Сотрудники", users_path
+      = link_to "Персонажи", users_path
     %li
-      = link_to "Новый сотрудник", new_user_path
+      = link_to "Новый персонаж", new_user_path
     %li.divider
     %li.dropdown-header
       Dropdown header
@@ -16,3 +16,11 @@
     %li
       %a{href: "javascript:void(0)"}
         Еще планов
+  %a.dropdown-toggle{href: "bootstrap-elements.html", 'data-target'=>"#", 'data-toggle'=>"dropdown"}
+    Сотрудники
+    %b.caret
+  %ul.dropdown-menu
+    %li
+      = link_to "Компании", users_path
+    %li
+      = link_to "Добавить сотрудника", new_user_path
