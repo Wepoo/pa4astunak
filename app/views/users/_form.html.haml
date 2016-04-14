@@ -20,9 +20,9 @@
         = f.text_field :third_name, class: 'form-control', placeholder: 'Отчество', id: 'inputName'
     .form-group
       %label{for: 'inputEmail', class: 'col-md-2 control-label'}
-        Имя
+        Дата рождения
       .col-md-10
-        = f.datetime_select :birthday, class: 'form-control', id: 'inputBirthday'
+        = f.date_select :birthday, class: 'form-control', id: 'inputBirthday'
     .form-group
       %label{for: 'inputEmail', class: 'col-md-2 control-label'}
         Город

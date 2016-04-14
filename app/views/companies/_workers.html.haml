@@ -1,0 +1,27 @@
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th ФИО
+      %th Дата рождения
+      %th Город
+
+  %tbody
+    - users.each do |user|
+      %tr       
+        %td
+          = user.last_name
+          = user.name
+          = user.third_name
+        %td
+          - if user.birthday
+            = user.birthday.strftime("%d %b %Y")
+        %td
+          = user.city
+        %td
+          = link_to  user_path(user) do
+            %button.btn.btn-sm.btn-primary{style: 'float: right;'}
+              Просмотреть
+        %td
+          = link_to dismiss_path(user.id), :data => { :confirm => 'Are you sure?' } do
+            %button.btn.btn-sm.btn-danger{style: 'float: right;'}
+              Уволить

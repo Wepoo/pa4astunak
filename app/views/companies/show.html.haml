@@ -1,0 +1,23 @@
+.container
+  .row
+    .col-lg-8
+      .jumbotron
+        %h2
+          = @company.title
+  .row
+    .btn-group.pull-right
+      %button{ type: "button", id: 'chooser', class: "btn btn-primary", 'data-toggle' => "modal",  'data-target' => "#myModal"}
+        Новый работник
+
+  .row
+    = render partial: 'workers', locals: { users: @users }
+
+#myModal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content  
+      = render partial: 'worker', locals: { company: @company, free_users: @free_users }
+  
+
+= link_to 'Edit', edit_company_path(@company)
+\|
+= link_to 'Back', companies_path

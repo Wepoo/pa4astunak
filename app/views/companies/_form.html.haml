@@ -1,0 +1,13 @@
+= form_for @company, :html => {:class => 'form-horizontal'} do |f|
+  %fieldset
+    %legend
+      Будьте внимательны
+
+    .form-group
+      %label{for: 'inputTitle', class: 'col-md-2 control-label'}
+        Название
+      .col-md-10
+        = f.text_field :title, autofocus: true, class: 'form-control', placeholder: 'Название', id: 'inputName'
+
+  .actions
+    = f.submit 'Готово', class: 'btn btn-primary'

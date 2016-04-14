@@ -1,20 +1,26 @@
-%p#notice= notice
+.container
+  .row
+    .col-lg-8
+      .jumbotron
+        .list-group
+          .list-group-item
+            .row-picture
+              = image_tag 'default.png'
+            .row-content
+              %h2.list-group-item-heading
+                = @user.name
+                = @user.last_name
+                    
+              .profile-usertitle-job
+                - if @user.birthday
+                  = @user.birthday.strftime("%d %b %Y")
+                = @user.city
+  .row
+    %h3 Безработный
 
-%p
-  %b Name:
-  = @user.name
-%p
-  %b Last name:
-  = @user.last_name
-%p
-  %b Third name:
-  = @user.third_name
-%p
-  %b Birthday:
-  = @user.birthday
-%p
-  %b City:
-  = @user.city
+    = link_to companies_path do
+      %button.btn.btn-sm.btn-primary
+        На работу
 
 = link_to 'Edit', edit_user_path(@user)
 \|
