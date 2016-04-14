@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
   # GET /users
   # GET /users.json
   def index
@@ -71,4 +70,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :last_name, :third_name, :birthday, :city)
     end
+
 end
